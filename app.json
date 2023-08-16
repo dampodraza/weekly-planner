@@ -25,6 +25,12 @@
     },
     "web": {
       "favicon": "./assets/favicon.png"
-    }
+    },
+    "extra": {
+      "eas": {
+        "projectId": "b57412b8-5a4f-49a1-b0af-a8ad332f09ed"
+      }
+    },
+    "owner": "artifex123"
   }
 }
