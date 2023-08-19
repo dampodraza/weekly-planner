@@ -6,6 +6,7 @@
     "orientation": "portrait",
     "icon": "./assets/icon.png",
     "userInterfaceStyle": "light",
+    "scheme": "your-app-scheme",
     "splash": {
       "image": "./assets/splash.png",
       "resizeMode": "contain",
@@ -15,7 +16,8 @@
       "**/*"
     ],
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "bundleIdentifier": "com.artifex123.sparkytodo"
     },
     "android": {
       "adaptiveIcon": {
@@ -24,6 +26,7 @@
       }
     },
     "web": {
+      "bundler": "metro",
       "favicon": "./assets/favicon.png"
     },
     "extra": {
@@ -31,6 +34,9 @@
         "projectId": "b57412b8-5a4f-49a1-b0af-a8ad332f09ed"
       }
     },
-    "owner": "artifex123"
+    "owner": "artifex123",
+    "plugins": [
+      "expo-router"
+    ]
   }
 }

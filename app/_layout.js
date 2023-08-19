@@ -1,35 +1,35 @@
-import React, {useCallback, useEffect, useState} from 'react';
-import {TextInput} from 'react-native';
-import Checkbox from 'expo-checkbox'; // Import Checkbox from expo-checkbox
-import {Text, View} from 'react-native-ui-lib';
+import React, {useCallback, useEffect} from 'react';
 import * as SplashScreen from 'expo-splash-screen';
 import {useFonts} from 'expo-font';
 import {StatusBar} from 'expo-status-bar';
-import SingleDay from "./src/components/SingleDay";
+import { Stack, NavigationContainer } from 'expo-router';
 
+SplashScreen.preventAutoHideAsync();
 
-export default function App() {
-
-
-    const [fontsLoaded] = useFonts({
-        'Chivo-Regular': require('./assets/fonts/Chivo-Regular.otf'),
+export default function Layout() {
+    const [loaded, error] = useFonts({
+        'Chivo-Regular': require('../assets/fonts/Chivo-Regular.otf'),
     });
 
-    const onLayoutRootView = useCallback(async () => {
-        if (fontsLoaded) {
-            await SplashScreen.hideAsync();
-        }
-    }, [fontsLoaded]);
+    useEffect(() => {
+        if (error) throw error;
+    }, [error]);
 
-    if (!fontsLoaded) {
+    useEffect(() => {
+        if (loaded) {
+            SplashScreen.hideAsync();
+        }
+    }, [loaded]);
+
+    if (!loaded) {
         return null;
     }
 
 
     return (
-        <View style={styles.container} onLayout={onLayoutRootView} paddingV-s8>
-            <SingleDay/>
-        </View>
+        <Stack>
+
+        </Stack>
     );
 }
 
